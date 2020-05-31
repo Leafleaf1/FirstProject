@@ -3,27 +3,28 @@
 
 from termcolor import colored
 import library
-from library import storyText, loseHP, storyText
+from library import storyText, loseHP, storyText, situationText
 
 
 # Initial variables
 health = 100
 
-userName = input("Enter Your Name: ")
+userName = situationText("Enter Your Name: ")
 userName = userName.title()
 
 storyText(library.text.intro)
 
-
 storyText("Welcome to Hidden Valley! Let's begin \n")
-userInput = input("Do you choose the fast route (1) or the scenic route (2) \n")
 
+userInput = situationText("Do you choose the fast route (1) or the scenic route (2) \n")
+
+#First Story - Leaf
 if userInput == "1":
     storyText(f"{userName}, you have started your journey on the fast route! \n")
-    userInput = input("You found a horse, would you like to ride it? Yes (1) | No (2) \n")
+    userInput = situationText(situationText("You found a horse, would you like to ride it? Yes (1) | No (2) \n"))
     if userInput == "1":
         storyText("You've started the speedy but loud way to go get to the stream!\n")
-        userInput = input("After a few minutes of riding the horse you spotted a bear getting closer, \n do you"
+        userInput = situationText("After a few minutes of riding the horse you spotted a bear getting closer, \n do you"
                           "want to hop off and try to scare the bear off 60% (1) or turn the horse around and run"
                           "away 80% (2)? \n")
         if userInput == "1":
@@ -40,17 +41,17 @@ if userInput == "1":
                 storyText("You got lost trying to run away from the bear but you can see the town in the distance")
                 pass
 
-
-    if userInput == "2":
+# Second Story - Finn
+    if userInput== "2":
         storyText("you've began the long walk ahead of you")
-
 
 if userInput == "2":
     storyText(f"{userName}, you have started your journey through the scenic route!"
-          f"Let's begin the safe, prettier, but longer walk!")
-    userInput = input("""Shall you grab a bag full of nuts and berries for the walk?
-there are always better snacks on the road to pick up
+          f"Let's begin the safe, prettier, but longer walk! \n")
+    userInput = situationText("""Shall you grab a bag full of nuts and berries for the walk? there are always better snacks on the road to pick up
  Yes (1) | No (2) \n""")
+
+
     if userInput == "1":
         storyText("This can be helpful bringing your health up, just by a couple of points")
     if userInput == "2":
