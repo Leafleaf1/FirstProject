@@ -41,8 +41,8 @@ def storyText(text):
 def situationText(text):
     x = colored(text, "red")
     slowWriteText(x)
-
-
+    y = input()
+    return y
 
 
 
